@@ -1,5 +1,4 @@
 kill
 cook
 leave
-clean the house
 clean
