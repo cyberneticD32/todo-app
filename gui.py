@@ -1,6 +1,12 @@
-import functions
 import FreeSimpleGUI as sg
 import time
+import os
+
+import functions
+
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
 
 sg.theme('DarkAmber')
 
@@ -44,7 +50,8 @@ while True:
                 functions.write_todos(todos)
                 window["todos"].update(values=todos)
             except IndexError:
-                sg.popup("Please select a item first", font=("Helvetica", 20))
+                sg.popup("Please select a item first",
+                         font=("Helvetica", 20))
         case "Complete":
             try:
                 todo_to_complete = values['todos'][0]
